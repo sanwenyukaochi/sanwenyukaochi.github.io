@@ -63,6 +63,7 @@
 	- [分解质因数求组合数](#分解质因数求组合数)
 
 # 基础算法
+
 ## 快速排序
 ```cpp
 void quick_sort(int q[], int l, int r) {
@@ -76,6 +77,7 @@ void quick_sort(int q[], int l, int r) {
 	quick_sort(q, l, j), quick_sort(q, j + 1, r);
 }
 ```
+
 ## 归并排序
 ```cpp
 void merge_sort(int q[], int l, int r) {
@@ -92,14 +94,17 @@ void merge_sort(int q[], int l, int r) {
 	for (i = l, j = 0; i <= r; i++, j++)q[i] = tmp[j];
 }
 ```
+
 ## 整数⼆分算法
 ```cpp
 
 ```
+
 ## 浮点数⼆分算法
 ```cpp
 
 ```
+
 ## ⾼精度加法
 C = A + B, A >= 0, B >= 0
 ```cpp
@@ -125,6 +130,7 @@ auto c = add(A, B); //vector<int> c = add(A, B);
 for (int i = c.size() - 1; i >= 0; i--)printf("%d", c[i]);
 	
 ```
+
 ## ⾼精度减法
 C = A - B, A >= B, A >= 0, B >= 0
 ```cpp
@@ -156,34 +162,57 @@ vector<int> c;
 if (cmp(A, B))c = sub(A, B); else auto c = sub(B, A);
 for (int i = c.size() - 1; i >= 0; i--)printf("%d", c[i]);
 ```
+
 ## ⾼精度乘低精度
 ```cpp
 
 ```
+
 ## ⾼精度除以低精度
 ```cpp
 
 ```
+
 ## 一维前缀和
+
 ## 二维前缀和
+
 ## 一维差分
+
 ## 二维差分
+
 ## 位运算
+
 ## 双指针
+
 ## 离散化
+
 ## 区间合并
+
 # 数据结构
+
 ## 单链表
+
 ## 双链表
+
 ## 栈
+
 ## 队列
+
 ## 单调栈
+
 ## KMP
+
 ## Trie树
+
 ## 并查集
+
 ## 堆
+
 ## 一般哈希
+
 ## 字符串哈希
+
 # C++STL
 ```cpp
 vector 变⻓数组，倍增的思想
@@ -288,22 +317,36 @@ bitset, 圧位
 
 ```
 
-
 # 搜索与图论
+
 ## 树与图的存储
+
 ## 树与图的遍历
+
 ## 拓扑排序
+
 ## 朴素dijkstra算法
+
 ## 堆优化版dijkstra
+
 ## Bellman-Ford算法
+
 ## spfa 算法
+
 ## spfa 判断图中是否存在负环
+
 ## floyd 算法
+
 ## 朴素版prime算法
+
 ## kruskal 算法
+
 ## 染色法判别二分图
+
 ## 匈牙利算法
+
 # 数学知识
+
 ## 试除法判定质数
 ```cpp
 bool is_prime(int x) {
@@ -314,7 +357,9 @@ bool is_prime(int x) {
 	return true;
 }
 ```
+
 ## 试除法分解质数
+
 ## 朴素筛法求素数
 primes[ ]存储所有素数，st[x]存储x是否被筛掉。
 ```cpp
@@ -329,17 +374,24 @@ void get_primes(int n) {
 	}
 }
 ```
+
 ## 线性筛法求素数
+
 ## 试除法求所有约数
+
 ## 约数个数和约数之和
+
 ## 欧几里得算法
 ```cpp
 int gcd(int a, int b) {
 	return b ? gcd(b, a % b) : a;
 }
 ```
+
 ## 求欧拉函数
+
 ## 筛法求欧拉函数
+
 ## 快速幂
 ```cpp
 int qmi(int m, int k, int p) {
@@ -352,9 +404,15 @@ int qmi(int m, int k, int p) {
 	return res;
 }
 ```
+
 ## 扩展欧几里得算法
+
 ## 高斯消元
+
 ## 递归法求组合数
+
 ## 通过预处理逆元的方式求组合数
+
 ## Lucas定理
+
 ## 分解质因数求组合数
