@@ -101,6 +101,7 @@ void merge_sort(int q[], int l, int r) {
 
 ```
 ## ⾼精度加法
+C = A + B, A >= 0, B >= 0
 ```cpp
 vector<int>add(vector<int>& A, vector<int>& B) {
 	if (A.size() < B.size())return add(B, A);
@@ -116,7 +117,16 @@ vector<int>add(vector<int>& A, vector<int>& B) {
 	return C;
 }
 ```
+```cpp
+string a, b; vector<int> A, B; cin >> a >> b;
+for (int i = a.size() - 1; i >= 0; i--)A.push_back(a[i] - '0');
+for (int i = b.size() - 1; i >= 0; i--)B.push_back(b[i] - '0');
+auto c = add(A, B); //vector<int> c = add(A, B);
+for (int i = c.size() - 1; i >= 0; i--)printf("%d", c[i]);
+	
+```
 ## ⾼精度减法
+C = A - B, A >= B, A >= 0, B >= 0
 ```cpp
 vector<int>sub(vector<int>& A, vector<int>& B) {
 	vector<int> C;
@@ -130,6 +140,21 @@ vector<int>sub(vector<int>& A, vector<int>& B) {
 	while (C.size() > 1 && C.back() == 0)C.pop_back();
 	return C;
 }
+```
+```cpp
+bool cmp(vector<int>& A, vector<int>& B) {
+	if (A.size() != B.size())return A.size() > B.size();
+	for (int i = A.size() - 1; i >= 0; i--) {
+		return A[i] > B[i];
+	}
+	return true;
+}
+string a, b; vector<int> A, B; cin >> a >> b;
+for (int i = a.size() - 1; i >= 0; i--)A.push_back(a[i] - '0');
+for (int i = b.size() - 1; i >= 0; i--)B.push_back(b[i] - '0');
+vector<int> c;
+if (cmp(A, B))c = sub(A, B); else auto c = sub(B, A);
+for (int i = c.size() - 1; i >= 0; i--)printf("%d", c[i]);
 ```
 ## ⾼精度乘低精度
 ```cpp
@@ -280,8 +305,30 @@ bitset, 圧位
 ## 匈牙利算法
 # 数学知识
 ## 试除法判定质数
+```cpp
+bool is_prime(int x) {
+	if (x < 2) return false;
+	for (int i = 2; i <= x / i; i++) {
+		if (x % i == 0)return false;
+	}
+	return true;
+}
+```
 ## 试除法分解质数
 ## 朴素筛法求素数
+primes[ ]存储所有素数，st[x]存储x是否被筛掉。
+```cpp
+int primes[N], cnt;
+bool st[N];
+void get_primes(int n) {
+	for (int i = 2; i <= n; i++) {
+		if (st[i]) continue;
+		primes[cnt++] = i;
+		for (int j = i + i; j <= n; j += i)
+			st[j] = true;
+	}
+}
+```
 ## 线性筛法求素数
 ## 试除法求所有约数
 ## 约数个数和约数之和
