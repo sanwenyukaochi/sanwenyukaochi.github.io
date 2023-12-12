@@ -112,12 +112,35 @@ if (cmp(A, B))c = sub(A, B); else auto c = sub(B, A);
 for (int i = c.size() - 1; i >= 0; i--)printf("%d", c[i]);
 ```
 ## ⾼精度乘低精度
+C = A * b, A >= 0, b >= 0
 ```cpp
-
+vector<int> mul(vector<int>& A, int b) {
+	vector<int>C;
+	int t = 0;
+	for (int i = 0; i < A.size() || t; i++) {
+		if (i < A.size())t += A[i] + b;
+		C.push_back(t % 10);
+		t /= 10;
+	}
+	while (C.size() > 1 && C.back() == 0) C.pop_back();
+	return C;
+}
 ```
 ## ⾼精度除以低精度
 ```cpp
-
+A / b = C ... r, A >= 0, b > 0
+vector<int> div(vector<int>& A, int b, int& r) {
+	vector<int>C;
+	r = 0;
+	for (int i = A.size()-1; i >= 0; i--){
+		r = r * 10 + A[i];
+		C.push_back(r / b);
+		r %= b;
+	}
+	reverse(C.begin(), C.end());
+	while (C.size() > 1 && C.back() == 0) C.pop_back();
+	return C;
+}
 ```
 ## 一维前缀和
 ```cpp
