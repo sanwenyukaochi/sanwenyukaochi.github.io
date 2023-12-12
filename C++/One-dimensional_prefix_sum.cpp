@@ -18,12 +18,13 @@ void printf_f() {
 int main()
 {
 	sync_with_stdio();
-	cin >> n >> m;
-	for (int i = 1; i <= n; i++)scanf("%d", &a[i]);
-	for (int i = 1; i <= n; i++)s[i] = s[i - 1] + a[i];
+	scanf("%d%d", &n, &m);
+	for (int i = 1; i <= n; i++) {
+		scanf("%d", &a[i]);
+		s[i] = s[i - 1] + a[i];
+	}
 	printf_f();
-	while (m--)
-	{
+	while (m--) {
 		int l, r;
 		scanf("%d%d", &l, &r);
 		printf("%d\n", s[r] - s[l - 1]);
