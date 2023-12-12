@@ -127,8 +127,8 @@ vector<int> mul(vector<int>& A, int b) {
 }
 ```
 ## ⾼精度除以低精度
-```cpp
 A / b = C ... r, A >= 0, b > 0
+```cpp
 vector<int> div(vector<int>& A, int b, int& r) {
 	vector<int>C;
 	r = 0;
