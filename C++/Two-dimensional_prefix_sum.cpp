@@ -8,7 +8,7 @@ void sync_with_stdio() { ios::sync_with_stdio(0); cin.tie(0), cout.tie(0); }
 int n, m, q;
 int a[N][N], s[N][N];
 void printf_f() {
-	printf("以下是原矩阵a[N][N]\n");
+	printf("以下是二维矩阵a[N][N]\n");
 	for (int i = 1; i <= n; i++) {
 		for (int j = 1; j <= n; j++) {
 			printf("%d ", a[i][j]);

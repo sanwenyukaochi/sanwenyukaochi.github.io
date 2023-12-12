@@ -7,12 +7,21 @@ const int N = 100010;
 void sync_with_stdio() { ios::sync_with_stdio(0); cin.tie(0), cout.tie(0); }
 int n, m;
 int a[N], s[N];
+void printf_f() {
+	printf("以下是一维矩阵a[N]\n");
+	for (int i = 1; i <= n; i++) printf("%d ", a[i]);
+	printf("\n");
+	printf("以下是一维前缀和矩阵s[N]\n");
+	for (int i = 1; i <= n; i++) printf("%d ", s[i]);
+	printf("\n");
+}
 int main()
 {
 	sync_with_stdio();
 	cin >> n >> m;
 	for (int i = 1; i <= n; i++)scanf("%d", &a[i]);
 	for (int i = 1; i <= n; i++)s[i] = s[i - 1] + a[i];
+	printf_f();
 	while (m--)
 	{
 		int l, r;
