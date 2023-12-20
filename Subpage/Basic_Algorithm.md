@@ -186,8 +186,35 @@ s[i][j] = s[i - 1][j] + s[i][j - 1] - s[i - 1][j - 1] + a[i][j];
 //s[x2, y2] - s[x1 - 1, y2] - s[x2, y1 - 1] + s[x1 - 1, y1 - 1];
 ```
 ## 一维差分
+给区间[l, r]中的每个数加上c：B[l] += c, B[r + 1] -= c
+```cpp
+void insert(int l, int r, int c) {
+	b[l] += c;
+	b[r + 1] -= c;
+}
+```
+```cpp
+for (int i = 1; i <= n; i++) {
+	insert(i, i, a[i]);//效果类似b[i] = a[i] - a[i - 1];，把A看成是B的前缀和数组，求出原数组B
+}
+for (int i = 1; i <= 10; i++) {
+	b[i] += b[i - 1];
+}
+```
 ## 二维差分
+给以(x1, y1)为左上⾓，(x2, y2)为右下⾓的⼦矩阵中的所有元素加上c：
+S[x1, y1] += c, S[x2 + 1, y1] -= c, S[x1, y2 + 1] -= c, S[x2 + 1, y2 + 1] += c
+```cpp
+void insert(int x1, int y1, int x2, int y2, int c) {
+	b[x1][y1] += c;
+	b[x2 + 1][y1] -= c;
+	b[x1][y2 + 1] -= c;
+	b[x2 + 1][y2 + 1] += c;
+}
+```
 ## 位运算
+求n的第k位数字: n >> k & 1
+返回n的最后⼀位1：lowbit(n) = n & -n
 ## 双指针
 ## 离散化
 ## 区间合并
