@@ -15,7 +15,7 @@
   - [通过预处理逆元的方式求组合数](#通过预处理逆元的方式求组合数)
   - [Lucas定理](#lucas定理)
   - [分解质因数求组合数](#分解质因数求组合数)
-
+  - [求子集](#求子集)
 # 数学知识
 ## 试除法判定质数
 ```cpp
@@ -71,3 +71,16 @@ int qmi(int m, int k, int p) {
 ## 通过预处理逆元的方式求组合数
 ## Lucas定理
 ## 分解质因数求组合数
+## 求子集
+```cpp
+void allPossibleSubset(int arr[], int n){
+	int  count = pow(2, n);
+	for (int i = 0; i < count; i++){
+		for (int j = 0; j < n; j++){
+			if (i >> j & 1){
+				cout << arr[j] << " ";
+			}
+		}cout << "\n";
+	}
+}
+```
