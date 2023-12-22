@@ -215,6 +215,20 @@ void insert(int x1, int y1, int x2, int y2, int c) {
 ## 位运算
 求n的第k位数字: n >> k & 1
 返回n的最后⼀位1：lowbit(n) = n & -n
+```cpp
+int lowbit(int x) {
+	return x & -x;//return x & ~x +1;
+}
+/*
+求x的二进制有多少个1
+int ans = 0;
+while (x){
+	cout << x << '-' << lowbit(x) << "=" << x - lowbit(x) << endl;
+	x -= lowbit(x);
+	ans++;
+}
+cout << ans <<' ';
+```
 ## 双指针
 ## 离散化
 ## 区间合并
