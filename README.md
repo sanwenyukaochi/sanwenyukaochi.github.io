@@ -54,6 +54,3 @@
 时空复杂度分析
 */
 ```
-
-[java.docx](./Java基础课后习题答案.docx)
-[java.pdf](./Java基础课后习题答案.pdf)
