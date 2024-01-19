@@ -221,13 +221,13 @@ int lowbit(int x) {
 }
 /*
 求x的二进制有多少个1
-int ans = 0;
+int res = 0;
 while (x){
 	cout << x << '-' << lowbit(x) << "=" << x - lowbit(x) << endl;
-	x -= lowbit(x);
-	ans++;
+	x -= lowbit(x);//x -= x & -x;
+	res++;
 }
-cout << ans <<' ';
+cout << res <<' ';
 */
 ```
 ## 双指针
