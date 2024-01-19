@@ -97,5 +97,5 @@ arr.erase(unique(arr.begin(), arr.end()), arr.end());
 int a[] = { 1,1,2,2,3,3,4,4 };
 int m = unique(a, a + 8) - a;
 此时a[] = 1,2,3,4(m),3,3,4,4
-*/1
+*/
 ```
