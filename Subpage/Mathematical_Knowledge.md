@@ -16,6 +16,7 @@
   - [Lucas定理](#lucas定理)
   - [分解质因数求组合数](#分解质因数求组合数)
   - [求子集](#求子集)
+  - [去重](#去重)
 # 数学知识
 ## 试除法判定质数
 ```cpp
@@ -47,9 +48,11 @@ void get_primes(int n) {
 ## 约数个数和约数之和
 ## 欧几里得算法
 ```cpp
+//gcd最大公约数
 int gcd(int a, int b) {
 	return b ? gcd(b, a % b) : a;
 }
+//lcm最小公倍数
 int lcm(int a, int b) {
 	return a * b / gcd(a, b);
 }
@@ -86,4 +89,13 @@ void allPossibleSubset(int arr[], int n){
 		}cout << "\n";
 	}
 }
+```
+## 去重
+```cpp
+arr.erase(unique(arr.begin(), arr.end()), arr.end());
+/*
+int a[] = { 1,1,2,2,3,3,4,4 };
+int m = unique(a, a + 8) - a;
+此时a[] = 1,2,3,4(m),3,3,4,4
+*/
 ```
