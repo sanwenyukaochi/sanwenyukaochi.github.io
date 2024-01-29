@@ -13,6 +13,25 @@
 
 # 数据结构
 ## 单链表
+head    存储链表头
+e[]     存储节点的值
+ne[]    存储节点的next指针
+idx     表⽰当前⽤到了哪个节点
+```cpp
+int head, e[N], ne[N], idx;
+void init() {
+    head = -1;
+    idx = 0;
+}
+void insert(int a) {
+    e[idx] = a;
+    ne[idx] = head;
+    head = idx++;
+}
+void remove() {
+    head = ne[head];
+}
+```
 ## 双链表
 ## 栈
 ## 队列
@@ -31,7 +50,8 @@ int find(int x) { // 返回x的祖宗节点
 for (int i = 1; i <= n; i++) p[i] = i;
 // 合并a和b所在的两个集合：
 p[find(a)] = find(b);
-
+```
+```cpp
 //(2)维护size的并查集：
 int p[N], size[N]; //p[]存储每个点的祖宗节点, size[]只有祖宗节点的有意义，表⽰祖宗节点所在集合中的点的数量
 int find(int x) { // 返回x的祖宗节点
@@ -45,7 +65,8 @@ for (int i = 1; i <= n; i++) { // 初始化，假定节点编号是1~n
 // 合并a和b所在的两个集合：
 size[find(b)] += size[find(a)];
 p[find(a)] = find(b);
-
+```
+```cpp
 //(3)维护到祖宗节点距离的并查集：
 int p[N], d[N]; //p[]存储每个点的祖宗节点, d[x]存储x到p[x]的距离
 int find(int x) { // 返回x的祖宗节点
