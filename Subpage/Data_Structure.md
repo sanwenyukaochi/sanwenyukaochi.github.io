@@ -14,9 +14,9 @@
 # 数据结构
 ## 单链表
 ```
-head            存储链表头
-e[]             存储节点的值
-ne[]            存储节点的next指针
+head            存储链表头(表示头节点的下标)
+e[i]            存储节点的值(表示节点i的值)
+ne[i]           存储节点的next指针(表示节点i的next指针)
 idx             表⽰当前⽤到了哪个节点
 init()          初始化
 add_to_head(x)  将x插到头节点
@@ -27,8 +27,7 @@ remove(k)       将下标是k的点后面的点删掉
 ```cpp
 int head, e[N], ne[N], idx;
 void init() {
-    head = -1;
-    idx = 0;
+    head = -1; idx = 0;
 }
 void add_to_head(int x) {
     e[idx] = x; ne[idx] = head; head = idx++;
