@@ -13,6 +13,7 @@
 
 # 数据结构
 ## 单链表
+```
 head            存储链表头
 e[]             存储节点的值
 ne[]            存储节点的next指针
@@ -22,6 +23,7 @@ add_to_head(x)  将x插到头节点
 remove_to_head()将头节点删掉
 add(k,x)        将x插到下标是k的点后面
 remove(k)       将下标是k的点后面的点删掉
+```
 ```cpp
 int head, e[N], ne[N], idx;
 void init() {
