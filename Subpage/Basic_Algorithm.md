@@ -83,7 +83,6 @@ double bsearch_3(double l, double r)
     }
     return l;
 }
-
 ```
 ## ⾼精度加法
 C = A + B, A >= 0, B >= 0
@@ -108,7 +107,6 @@ for (int i = a.size() - 1; i >= 0; i--)A.push_back(a[i] - '0');
 for (int i = b.size() - 1; i >= 0; i--)B.push_back(b[i] - '0');
 auto c = add(A, B); //vector<int> c = add(A, B);
 for (int i = c.size() - 1; i >= 0; i--)printf("%d", c[i]);
-	
 ```
 ## ⾼精度减法
 C = A - B, A >= B, A >= 0, B >= 0
@@ -231,5 +229,13 @@ cout << res <<' ';
 */
 ```
 ## 双指针
+```cpp
+for (int i = 0, j = 0; i < n; i++) {
+    while (j < i && check(i, j)) {
+        j++;
+    }
+    // 具体问题的逻辑
+}
+```
 ## 离散化
 ## 区间合并
