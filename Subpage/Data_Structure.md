@@ -23,13 +23,17 @@ void init() {
     head = -1;
     idx = 0;
 }
-void insert(int a) {
-    e[idx] = a;
-    ne[idx] = head;
-    head = idx++;
+void add_to_head(int x) {   //将x插到头节点
+    e[idx] = x; ne[idx] = head; head = idx++;
 }
-void remove() {
+void remove_to_head() {     //将头节点删掉
     head = ne[head];
+}
+void add(int k,int x) {     //将x插到下标是k的点后面
+    e[idx] = x; ne[idx] = ne[k]; ne[k] = idx++;
+}
+void remove(int k) {        //将下标是k的点后面的点删掉
+    ne[k] = ne[ne[k]];
 }
 ```
 ## 双链表
