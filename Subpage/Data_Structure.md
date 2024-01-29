@@ -39,8 +39,8 @@ void remove() {
 ## KMP
 ## Trie树
 ## 并查集
+(1)朴素并查集：
 ```cpp
-//(1)朴素并查集：
 int p[N]; //存储每个点的祖宗节点
 int find(int x) { // 返回x的祖宗节点
     if (p[x] != x) p[x] = find(p[x]);
@@ -51,8 +51,8 @@ for (int i = 1; i <= n; i++) p[i] = i;
 // 合并a和b所在的两个集合：
 p[find(a)] = find(b);
 ```
+(2)维护size的并查集：
 ```cpp
-//(2)维护size的并查集：
 int p[N], size[N]; //p[]存储每个点的祖宗节点, size[]只有祖宗节点的有意义，表⽰祖宗节点所在集合中的点的数量
 int find(int x) { // 返回x的祖宗节点
     if (p[x] != x) p[x] = find(p[x]);
@@ -66,8 +66,8 @@ for (int i = 1; i <= n; i++) { // 初始化，假定节点编号是1~n
 size[find(b)] += size[find(a)];
 p[find(a)] = find(b);
 ```
+(3)维护到祖宗节点距离的并查集：
 ```cpp
-//(3)维护到祖宗节点距离的并查集：
 int p[N], d[N]; //p[]存储每个点的祖宗节点, d[x]存储x到p[x]的距离
 int find(int x) { // 返回x的祖宗节点
     if (p[x] != x) {
