@@ -25,6 +25,15 @@ add(k,x)        将x插到下标是k的点后面
 remove(k)       将下标是k的点后面的点删掉
 
 for (int i = head; i != -1; i = ne[i]) cout << e[i] << " -> ";
+
+void p() {
+    for (int i = head; i != -1; i = ne[i]) {  // 从head向后遍历
+        if (ne[i] == -1) cout << e[i];
+        else cout << e[i] << " -> ";
+    }
+    cout << endl;
+}
+
 ```
 ```cpp
 int head, e[N], ne[N], idx;
@@ -53,8 +62,17 @@ idx             表⽰当前⽤到了哪个节点
 init()          初始化，0是左端点，1是右端点
 insert(k,x)     在节点k的右边插⼊⼀个数x
 remove(k)       删除节点k
+
+void p() {
+    for (int i = r[0]; i != 1; i = r[i]) {  // 从左向右遍历
+        if (r[i] == 1) cout << e[i];
+        else cout << e[i] << " -> ";
+    }
+    cout << endl;
+}
 ```
 ```cpp
+int e[N], l[N], r[N], idx;
 void init() {
     r[0] = 1, l[1] = 0;
     idx = 2;
