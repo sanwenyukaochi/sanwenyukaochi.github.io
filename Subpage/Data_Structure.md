@@ -18,11 +18,13 @@ head            存储链表头(表示头节点的下标)
 e[i]            存储节点的值(表示节点i的值)
 ne[i]           存储节点的next指针(表示节点i的next指针)
 idx             表⽰当前⽤到了哪个节点
-init()          初始化
+init()          初始化，head = -1，idx = 0
 add_to_head(x)  将x插到头节点
 remove_to_head()将头节点删掉
 add(k,x)        将x插到下标是k的点后面
 remove(k)       将下标是k的点后面的点删掉
+
+for (int i = head; i != -1; i = ne[i]) cout << e[i] << " -> ";
 ```
 ```cpp
 int head, e[N], ne[N], idx;
@@ -43,7 +45,38 @@ void remove(int k) {
 }
 ```
 ## 双链表
+```
+e[i]            表⽰节点的值
+l[i]            表⽰节点的左指针
+r[i]            表⽰节点的右指针
+idx             表⽰当前⽤到了哪个节点
+init()          初始化，0是左端点，1是右端点
+insert(k,x)     在节点k的右边插⼊⼀个数x
+remove(k)       删除节点k
+```
+```cpp
+void init() {
+    r[0] = 1, l[1] = 0;
+    idx = 2;
+}
+void insert(int k, int x) {
+    e[idx] = x;
+    l[idx] = k, r[idx] = r[k];
+    l[r[k]] = idx, r[k] = idx++;
+}
+void remove(int k) {
+    l[r[k]] = l[k];
+    r[l[k]] = r[k];
+}
+```
 ## 栈
+```cpp
+int stk[N], tt = 0; // tt表⽰栈顶
+stk[++tt] = x;      // 向栈顶插⼊⼀个数
+tt--;               // 从栈顶弹出⼀个数
+stk[tt];            // 栈顶的值
+if (tt > 0) {}      // 判断栈是否为空
+```
 ## 队列
 ## 单调栈
 ## KMP
