@@ -94,4 +94,7 @@ d[find(a)] = distance;                  // 根据具体问题，初始化find(a)
 ## 堆
 ## 一般哈希
 ## 字符串哈希
-<link rel="stylesheet" href="./CSS/OneDark.css">
+
+<head>
+  <link rel="stylesheet" type="text/css" href="../CSS/OneDark.css" />
+</head>
