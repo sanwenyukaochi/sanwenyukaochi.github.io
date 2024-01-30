@@ -5,7 +5,7 @@
 # [搜索与图论](/Subpage/Search_and_Graph_Theory.md)
 # [数学知识](/Subpage/Mathematical_Knowledge.md)
 
-```cpp
+```
 /*
 基础算法 —— 代码模板链接 常用代码模板1——基础算法
 	排序
