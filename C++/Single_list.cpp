@@ -17,7 +17,7 @@ void remove_to_head() {
     head = ne[head];
 }
 //将x插到下标是k的点后面
-void add(int k,int x) {
+void add(int k, int x) {
     e[idx] = x; ne[idx] = ne[k]; ne[k] = idx++;
 }
 //将下标是k的点后面的点删掉
@@ -27,16 +27,16 @@ void remove(int k) {
 void print_f() {
     cout << "head -> ";
     for (int i = head; i != -1; i = ne[i]) {
-        cout << setw(3)<<e[i] << " -> ";
-    }cout << "无[链表]" << endl;
+        cout << setw(3) << e[i] << " -> ";
+    }cout << setw(3) << "无" << "[链表]" << endl;
     cout << setw(4) << head << " -> ";
     for (int i = head; i != -1; i = ne[i]) {
         cout << setw(3) << i << " -> ";
-    }cout << "无[对应下标idx]" << endl;
+    }cout << setw(3) << "-1" << "[对应下标idx]" << endl;
     cout << setw(4) << ne[head] << " -> ";
     for (int i = head; i != -1; i = ne[i]) {
         cout << setw(3) << ne[i] << " -> ";
-    }cout << "无[对应下标idx指向的下一个的指针位置]" << endl;
+    }cout << setw(3) << ne[-1] << "[对应下标idx指向的下一个的指针位置]" << endl;
     cout << endl;
 }
 int main()
@@ -44,20 +44,21 @@ int main()
     init();
     print_f();
     add_to_head(9); print_f();
-    add(1-1,1); print_f();
-    remove(1-1); print_f();
+    add(1 - 1, 1); print_f();
+    remove(1 - 1); print_f();
     remove_to_head(); print_f();
     add_to_head(6); print_f();
-    add(3-1, 6); print_f();
-    add(4-1, 5); print_f();
-    add(4-1, 5); print_f();
-    add(3-1, 4); print_f();
-    remove(6-1); print_f();
+    add(3 - 1, 6); print_f();
+    add(4 - 1, 5); print_f();
+    add(4 - 1, 5); print_f();
+    add(3 - 1, 4); print_f();
+    remove(6 - 1); print_f();
     add_to_head(777); print_f();
     add_to_head(666); print_f();
     add_to_head(555); print_f();
     return 0;
 }
+
 /*
 head -> 无[链表]
   -1 -> 无[对应下标idx]
