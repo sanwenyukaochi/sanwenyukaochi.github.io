@@ -18,7 +18,7 @@
 注：用`t`来表示上一位的进位;
 
 **高精度加法模版**
-
+```cpp
     // C = A + B, A >= 0, B >= 0
     vector<int> add(vector<int> &A, vector<int> &B)
     {
@@ -37,7 +37,7 @@
         if (t) C.push_back(t); // 如果最后还存在进位，就将t添加到C中
         return C;
     }
-    
+```
 
 **模板题** [AcWing 791. 高精度加法](https://www.acwing.com/problem/content/793/)  
 给定两个正整数（不含前导 0），计算它们的和。  
@@ -52,7 +52,7 @@
 23  
 **输出样例：**  
 35
-
+```cpp
     #include <iostream>
     #include <vector>
     
@@ -85,7 +85,7 @@
         for (int i = C.size() - 1; i >= 0; i--) printf("%d", C[i]);
         return 0;
     }
-    
+```    
 
 #### 2\. 高精度减法
 
@@ -94,7 +94,7 @@
 注：用`t`来表示上一位的借位;
 
 **高精度减法模版**
-
+```cpp
     // C = A - B, 满足A >= B, A >= 0, B >= 0
     vector<int> sub(vector<int> &A, vector<int> &B)
     {
@@ -111,7 +111,7 @@
         while (C.size() > 1 && C.back() == 0) C.pop_back();
         return C;
     }
-    
+```    
 
 **模板题** [AcWing 792. 高精度减法](https://www.acwing.com/problem/content/794/)  
 给定两个正整数（不含前导 0），计算它们的差，计算结果可能为负数。  
@@ -126,7 +126,7 @@
 11  
 **输出样例：**  
 21
-
+```cpp
     #include <iostream>
     #include <vector>
     using namespace std;
@@ -168,7 +168,7 @@
         cout << endl;
         return 0;
     }
-    
+```    
 
 #### 3\. 高精度乘低精度
 
@@ -177,7 +177,7 @@
 注：用`t`来表示上一位的进位;
 
 **高精度乘低精度模版**
-
+```cpp
     // C = A * b, A >= 0, b >= 0
     vector<int> mul(vector<int> &A, int b)
     {
@@ -194,7 +194,7 @@
         while (C.size() > 1 && C.back() == 0) C.pop_back();
         return C;
     }
-    
+```    
 
 **模板题** [AcWing 793. 高精度乘低精度](https://www.acwing.com/problem/content/795/)  
 给定两个非负整数（不含前导 0） A 和 B，请你计算 A×B 的值。  
@@ -210,7 +210,7 @@
 3  
 **输出样例：**  
 6
-
+```cpp
     #include <iostream>
     #include <vector>
     
@@ -242,7 +242,7 @@
         for (int i = C.size() - 1; i >= 0; i--) printf("%d", C[i]);
         return 0;
     }
-    
+```    
 
 #### 4\. 高精度除以低精度
 
@@ -251,7 +251,7 @@
 注：用`r`来表示上一位的余数，并将`r`初始化为0;
 
 **高精度除以低精度模版**
-
+```cpp
     // A / b = C ... r, A >= 0, b > 0
     vector<int> div(vector<int> &A, int b, int &r)
     {
@@ -268,7 +268,7 @@
         while (C.size() > 1 && C.back() == 0) C.pop_back();
         return C;
     }
-    
+```    
 
 **模板题** [AcWing 794. 高精度除以低精度](https://www.acwing.com/problem/content/796/)  
 给定两个非负整数（不含前导 0） A，B，请你计算 A/B 的商和余数。  
@@ -286,7 +286,7 @@ B 一定不为 0
 **输出样例：**  
 3  
 1
-
+```cpp
     #include <iostream>
     #include <vector>
     #include <algorithm>
@@ -319,7 +319,7 @@ B 一定不为 0
         cout << r << endl;
         return 0;
     }
-    
+```    
 
 #### 5\. 一维前缀和
 
@@ -328,10 +328,10 @@ B 一定不为 0
 注：原数组a的下标从1开始存储
 
 **一维前缀和模版**
-
+```cpp
     S[i] = a[1] + a[2] + ... a[i]
     a[l] + ... + a[r] = S[r] - S[l - 1]
-    
+```    
 
 **模板题** [AcWing 795. 前缀和](https://www.acwing.com/problem/content/797/)  
 输入一个长度为 n 的整数序列。  
@@ -357,7 +357,7 @@ B 一定不为 0
 3  
 6  
 10
-
+```cpp
     #include <iostream>
     using namespace std;
     const int N = 100010;
@@ -381,7 +381,7 @@ B 一定不为 0
         
         return 0;
     }
-    
+```    
 
 #### 6\. 二维前缀和
 
@@ -390,11 +390,11 @@ B 一定不为 0
 注：该图为矩阵a，且a的下标从1开始存储
 
 **二维前缀和模版**
-
+```cpp
     S[i, j] = 第i行j列格子左上部分所有元素的和
     以(x1, y1)为左上角，(x2, y2)为右下角的子矩阵的和为：
     S[x2, y2] - S[x1 - 1, y2] - S[x2, y1 - 1] + S[x1 - 1, y1 - 1]
-    
+```    
 
 **模板题** [AcWing 796. 子矩阵的和](https://www.acwing.com/problem/content/798/)  
 输入一个 n 行 m 列的整数矩阵，再输入 q 个询问，每个询问包含四个整数 x1,y1,x2,y2，表示一个子矩阵的左上角坐标和右下角坐标。  
@@ -423,7 +423,7 @@ B 一定不为 0
 17  
 27  
 21
-
+```cpp
     #include <iostream>
     using namespace std;
     
@@ -446,7 +446,7 @@ B 一定不为 0
         }
         return 0;
     }
-    
+```    
 
 #### 7\. 一维差分
 
@@ -456,9 +456,9 @@ B 一定不为 0
 注：数组的下标从1开始，对数组`b`初始化时，可将数组`a`和数组`b`都视为空数组，并依次将数值`a[i]`插入`a`数组的第`i`个位置，即模版题中的`insert(i, i, a[i]`。
 
 **一维差分模版**
-
+```cpp
     给区间[l, r]中的每个数加上c：B[l] += c, B[r + 1] -= c
-    
+```    
 
 **模板题** [AcWing 797. 差分](https://www.acwing.com/problem/content/799/)  
 输入一个长度为 n 的整数序列。  
@@ -483,7 +483,7 @@ B 一定不为 0
 1 6 1  
 **输出样例：**  
 3 4 5 3 4 2
-
+```cpp
     #include <iostream>
     using namespace std;
     
@@ -510,7 +510,7 @@ B 一定不为 0
         for (int i = 1; i <= n; i++) printf("%d ", b[i]);
         return 0;
     }
-    
+```    
 
 #### 8\. 二维差分
 
@@ -523,10 +523,10 @@ B 一定不为 0
 
 给矩阵a以`(x1, y1)`为左上角，`(x2, y2)`为右下角的子矩阵中的所有元素加上`c`  
 **思想**：通过构造一个矩阵`b`，使得矩阵`a`中的元素`a[i][j]`是矩阵`b`中元素的前缀和，可通过对`b`中元素进行操作，将矩阵a的某个子矩阵中的每一个元素`a[i][j]`都加上`c`。
-
+```cpp
     b[x1][y1] += c, b[x2 + 1][y1] -= c, b[x1][y2 + 1] -= c, b[x2 + 1][y2 + 1] += c;
     然后对矩阵b求前缀和得到矩阵a。
-    
+```    
 
 **模板题** [AcWing 798. 差分矩阵](https://www.acwing.com/problem/content/800/)  
 输入一个 n 行 m 列的整数矩阵，再输入 q 个操作，每个操作包含五个整数 x1,y1,x2,y2,c，其中 (x1,y1) 和 (x2,y2) 表示一个子矩阵的左上角坐标和右下角坐标。  
@@ -557,7 +557,7 @@ B 一定不为 0
 2 3 4 1  
 4 3 4 1  
 2 2 2 2
-
+```cpp
     #include <iostream>
     using namespace std;
     
@@ -597,7 +597,7 @@ B 一定不为 0
         }
         return 0;
     }
-    
+```    
 
 > 以上模版和笔记均来源：AcWing的算法基础课  
 > 链接：https://www.acwing.com/blog/content/277/
