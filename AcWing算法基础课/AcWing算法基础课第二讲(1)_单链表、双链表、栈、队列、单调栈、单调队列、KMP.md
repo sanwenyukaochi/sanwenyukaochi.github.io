@@ -451,7 +451,7 @@ empty
 YES  
 4  
 NO
-
+```cpp
     #include <iostream>
     
     using namespace std;
@@ -482,7 +482,7 @@ NO
     
         return 0;
     }
-    
+```    
 
 #### 4\. 队列
 
@@ -554,7 +554,7 @@ NO
 6  
 YES  
 4
-
+```cpp
     #include <iostream>
     
     using namespace std;
@@ -586,7 +586,7 @@ YES
     
         return 0;
     }
-    
+```    
 
 ##### 2）循环队列
 
@@ -661,7 +661,7 @@ hh 表示队头，tt表示队尾的后一个位置
 
 **输出样例：**  
 -1 3 -1 2 2
-
+```cpp
     #include <iostream>
     using namespace std;
     
@@ -681,7 +681,7 @@ hh 表示队头，tt表示队尾的后一个位置
         }
         return 0;
     }
-    
+```    
 
 #### 6\. 单调队列
 
@@ -748,7 +748,7 @@ hh 表示队头，tt表示队尾的后一个位置
 3.  计算最大值前注意将`hh`和`tt`重置;
 4.  此题用`cout`会超时，只能用`printf`;
 5.  `hh`从`0`开始，数组下标也要从`0`开始。
-
+```cpp
     #include <iostream>
     
     using namespace std;
@@ -787,7 +787,7 @@ hh 表示队头，tt表示队尾的后一个位置
     
         return 0;
     }
-    
+```    
 
 #### 7\. KMP
 
