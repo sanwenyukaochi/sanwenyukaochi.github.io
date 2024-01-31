@@ -136,7 +136,7 @@ D 6
 
 **输出样例：**  
 6 4 6 5
-
+```cpp
     #include <iostream>
     
     using namespace std;
@@ -211,7 +211,7 @@ D 6
     
         return 0;
     }
-    
+```    
 
 #### 2\. 双链表
 
@@ -310,7 +310,7 @@ IR 2 2
 
 **输出样例：**  
 8 7 7 3 2 9
-
+```cpp
     #include <iostream>
     
     using namespace std;
@@ -380,7 +380,7 @@ IR 2 2
     
         return 0;
     }
-    
+```    
 
 #### 3\. 栈
 
