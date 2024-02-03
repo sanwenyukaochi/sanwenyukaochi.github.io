@@ -228,41 +228,41 @@ D 6
 **双链表模版**
 
 *   `e[N]`表示节点的值，`l[N]`表示节点的左指针，`r[N]`表示节点的右指针，`idx`表示当前用到了哪个节点
-
+```cpp
     int e[N], l[N], r[N], idx;
-    
+```
 
 *   链表初始化  
     ![在这里插入图片描述](https://img-blog.csdnimg.cn/28b7de0a3d2a493cb3d8b8be4f9259c9.png)
-
+```cpp
     void init()
     {
         //0是左端点，1是右端点
         r[0] = 1, l[1] = 0;
         idx = 2; //由于0和1分别表示左右端点，因此idx初始化为2
     }
-    
+```
 
 *   在下标是`k`的点的右边，插入`x`  
     ![在这里插入图片描述](https://img-blog.csdnimg.cn/a4222ef2e5244da689a343c8c08e63a3.png)
-
+```cpp
     void add(int k, int x)
     {
         e[idx] = x;
         r[idx] = r[k], l[idx] = k;
         l[r[k]] = idx, r[k] = idx ++;
     }
-    
+```
 
 *   删除下标为`k`的节点  
     ![在这里插入图片描述](https://img-blog.csdnimg.cn/ec0c83077d524746a6f36b0968ba615f.png)
-
+```cpp
     void remove(int k)
     {
         l[r[k]] = l[k];
         r[l[k]] = r[k];
     }
-    
+```
 
 #### 模板题 AcWing 827. 双链表
 
