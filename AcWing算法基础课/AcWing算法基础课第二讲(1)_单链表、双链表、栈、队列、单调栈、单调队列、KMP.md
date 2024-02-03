@@ -391,22 +391,30 @@ IR 2 2
 **栈的模版**
 
 tt表示栈顶  
-`int stk[N], tt = 0;`
+```cpp
+int stk[N], tt = 0;
+```
 
 向栈顶插入一个数  
-`stk[ ++ tt] = x;`
+```cpp
+stk[ ++ tt] = x;
+```
 
 从栈顶弹出一个数  
-`tt -- ;`
+```cpp
+tt -- ;
+```
 
 栈顶的值  
-`stk[tt];`
+```cpp
+stk[tt];
+```
 
 判断栈是否为空
-
+```cpp
     if (tt > 0) not empty
     else empty
-    
+```
 
 #### 模板题 AcWing 828. 模拟栈
 
