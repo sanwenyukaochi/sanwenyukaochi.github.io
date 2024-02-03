@@ -89,25 +89,25 @@
 二分法查找根据`mid`与目标值`t`的相对位置不同，分为以下两种情况：
 
 第一种情况：
-
+```cpp
     mid = (l + r + 1) / 2;  // 第一种情况：mid位于[l, t]时，check(mid)为真
     if (check(mid) == true)  l = mid;  // 此时mid位于[l, t]，下一次查找时，将区间缩小为[mid, r]
     else r = mid - 1;  // 此时mid位于(t, r]，下一次查找时，将区间缩小为[l, mid - 1]
-    
+```
 
 第二种情况：
-
+```cpp
     mid = (l + r ) / 2;  // 第二种情况：mid位于[t, r]时，check(mid)为真
     if (check(mid) == true)  r = mid;  // 此时mid位于[t, r]，下一次查找时，将区间缩小为[l, mid]
     else l = mid + 1;  // 此时mid位于[l, t)，下一次查找时，将区间缩小为[mid + 1, r]
-    
+```
 
 ⚠️注意：`mid`位于目标值`t`的左侧或右侧时，`mid`的取值会有所不同，主要是为了防止遍历发生死循环。
 
 ###### 整数二分算法模版
 
 模版题[AcWing 789.数的范围](https://www.acwing.com/problem/content/791/)
-
+```cpp
     bool check(int x) {/* ... */} // 检查x是否满足某种性质
     
     // 区间[l, r]被划分成[l, mid]和[mid + 1, r]时使用：
@@ -132,7 +132,7 @@
         }
         return l;
     }
-    
+```
 
 ###### 浮点数二分算法模板
 
@@ -141,7 +141,7 @@
     或者直接迭代一定的次数，比如循环100次后停止二分。
 
 模板题[AcWing 790. 数的三次方根](https://www.acwing.com/problem/content/792/)
-
+```cpp
     bool check(double x) {/* ... */} // 检查x是否满足某种性质
     
     double bsearch_3(double l, double r)
@@ -155,7 +155,7 @@
         }
         return l;
     }
-    
+```
 
 > 参考资料：AcWing的算法基础课  
 > 链接：https://www.acwing.com/blog/content/277/
