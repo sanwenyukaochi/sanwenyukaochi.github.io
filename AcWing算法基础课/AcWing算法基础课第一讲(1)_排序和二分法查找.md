@@ -34,7 +34,7 @@
 ###### 快速排序算法模版
 
 模版题[AcWing 785.快速排序](https://www.acwing.com/problem/content/787/)
-
+```cpp
     void quick_sort(int q[], int l, int r) {
     	if (l >= r) return;
     	int x = q[l], i = l - 1, j = r + 1;
@@ -45,7 +45,7 @@
     	}
     	quick_sort(q, l, j), quick_sort(q, j + 1, r);
     }
-    
+```
 
 ##### 算法二：归并排序——分治
 
@@ -59,7 +59,7 @@
 ###### 归并排序算法模版
 
 模版题[AcWing 787.归并排序](https://www.acwing.com/problem/content/789/)
-
+```cpp
     void merge_sort(int q[], int l, int r)
     {
         if (l >= r) return;
@@ -78,7 +78,7 @@
     
         for (i = l, j = 0; i <= r; i ++, j ++ ) q[i] = tmp[j];
     }
-    
+```
 
 #### 2\. 二分法查找
 
