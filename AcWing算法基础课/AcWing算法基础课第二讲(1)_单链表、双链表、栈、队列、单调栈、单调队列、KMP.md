@@ -44,55 +44,55 @@
 **单链表模版**
 
 *   `head`存储链表头，`e[]`存储节点的值，`ne[]`存储节点的`next`指针，`idx`表示当前用到了哪个节点
-
+```cpp
     int head, e[N], ne[N], idx;
-    
+```
 
 *   链表初始化  
     ![在这里插入图片描述](https://img-blog.csdnimg.cn/1f548284dcd14816b203850d768a1f5b.png)
-
+```cpp
     void init()
     {
         head = -1;
         idx = 0;
     }
-    
+```
 
 *   在链表头插入一个数`x`  
     ![在这里插入图片描述](https://img-blog.csdnimg.cn/11f7653b26ac449da18e5f27d644c8df.png)
-
+```cpp
     void insert(int x)
     {
         e[idx] = x, ne[idx] = head, head = idx ++ ;
     }
-    
+```
 
 *   将`x`插入下标是`k`的点后面  
     ![在这里插入图片描述](https://img-blog.csdnimg.cn/6591f2604d964fed85bda718f2d4f6bd.png)
-
+```cpp
     void insert(int k, int x)
     {
         e[idx] = x, ne[idx] = ne[k], ne[k] = idx ++ ;
     }
-    
+```
 
 *   将头结点删除，需要保证头结点存在  
     ![在这里插入图片描述](https://img-blog.csdnimg.cn/4574cb6fed0245a1b8869310846e9707.png)
-
+```cpp
     void remove()
     {
         head = ne[head];
     }
-    
+```
 
 *   将下标是`k`的点后面的点删除  
     ![在这里插入图片描述](https://img-blog.csdnimg.cn/ff1ba2c1254646d8922d4101f7cb4111.png)
-
+```cpp
     void remove(int k)
     {
         ne[k] = ne[ne[k]];
     }
-    
+```
 
 #### 模板题 AcWing 826. 单链表
 
