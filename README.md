@@ -1,10 +1,9 @@
 # 目录
 # [基础算法](/Subpage/Basic_Algorithm.md)
 # [数据结构](/Subpage/Data_Structure.md)
-# [C++STL](/Subpage/C++STL.md)
 # [搜索与图论](/Subpage/Search_and_Graph_Theory.md)
 # [数学知识](/Subpage/Mathematical_Knowledge.md)
-
+# [动态规划](/Subpage/Dynamic_Programming.md)
 ```
 /*
 基础算法 —— 代码模板链接 常用代码模板1——基础算法
