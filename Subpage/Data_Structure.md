@@ -146,12 +146,11 @@ for (int i = 0; i < n; i++) {
 ```
 ## KMP
 ```cpp
-// s[] 是⻓⽂本， p[] 是模式串， n 是 s 的⻓度， m 是 p 的⻓度
-// 求模式串的Next数组：
-int n, m;
+int n, m;           // n是s的⻓度,m是p的⻓度
 int ne[M];
-char s[N], p[M];
+char s[N], p[M];    // s[]是⻓⽂本,p[]是模式串
 cin >> m >> p + 1 >> n >> s + 1;
+// 求模式串的Next数组：
 for (int i = 2, j = 0; i <= m; i++) {
     while (j && p[i] != p[j + 1]) j = ne[j];
     if (p[i] == p[j + 1]) j++;
@@ -162,12 +161,40 @@ for (int i = 1, j = 0; i <= n; i++) {
     while (j && s[i] != p[j + 1]) j = ne[j];
     if (s[i] == p[j + 1]) j++;
     if (j == m) {
-        // 匹配成功后的逻辑
+        // 匹配成功后的逻辑i和m的关系
         j = ne[j];
     }
 }
 ```
 ## Trie树
+```
+// 0号点既是根节点，⼜是空节点
+// son[][]存储树中每个节点的⼦节点
+// cnt[]存储以每个节点结尾的单词数量
+// str[]要插入的单词
+```
+```cpp
+int son[N][26], cnt[N], idx;
+char str[N];
+void insert(char* str) {
+    int p = 0;
+    for (int i = 0; str[i]; i++) {
+        int u = str[i] - 'a';
+        if (!son[p][u])son[p][u] = ++idx;
+        p = son[p][u];
+    }
+    cnt[p]++;
+}
+int query(char* str) {
+    int p = 0;
+    for (int i = 0; str[i]; i++) {
+        int u = str[i] - 'a';
+        if (!son[p][u])return 0;
+        p = son[p][u];
+    }
+    return cnt[p];
+}
+```
 ## 并查集
 (1)朴素并查集：
 ```cpp
