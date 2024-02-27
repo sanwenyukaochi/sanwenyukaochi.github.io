@@ -10,6 +10,7 @@
   - [并查集](#并查集)
   - [堆](#堆)
   - [一般哈希](#一般哈希)
+  - [BPDS哈希](#BPDS哈希)
   - [字符串哈希](#字符串哈希)
   - [C++STL](#C++STL)
 
@@ -240,6 +241,34 @@ d[find(a)] = distance;                  // 根据具体问题，初始化find(a)
 ```
 ## 堆
 ## 一般哈希
+## BPDS哈希
+
+```cpp
+// 题目: 给定含有n个整数的序列，要求对这个序列进行去重操作。所谓去重，是指对这个序列中每个重复出现的数，只保留该数第一次出现的位置，删除其余位置。
+// 输入: 输入包含两行： 第一行包含一个正整数n（1 ≤ n ≤ 1000000），表示第二行序列中数字的个数； 第二行包含n个整数，整数之间以一个空格分开。每个整数小于等于1000000000。
+// 输出: 输出只有一行，按照输入的顺序输出其中不重复的数字，整数之间用一个空格分开。
+// 样例
+// 	输入:5
+// 		10 12 93 12 75
+// 	输出:10 12 93 75
+#include <ext/pb_ds/assoc_container.hpp>
+#include <ext/pb_ds/hash_policy.hpp>
+#include <bits/stdc++.h>
+using namespace __gnu_pbds;
+using namespace std;
+int main() {
+    ios::sync_with_stdio(false);cin.tie(nullptr);cout.tie(nullptr);
+    int n; cin >> n; //scanf("%d", &n);
+    gp_hash_table<int, bool> corder;
+    for (int i = 0; i < n; ++i) {
+        int now; cin >> now; //scanf("%d", &now);
+        if (!corder[now]) {
+            cout << now << ' '; //printf("%d ", now);
+            corder[now] = true;
+        }
+    }
+}
+```
 ## 字符串哈希
 ## C++STL
 ```cpp
