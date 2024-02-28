@@ -16,7 +16,7 @@
   - [Lucas定理](#lucas定理)
   - [分解质因数求组合数](#分解质因数求组合数)
   - [求子集](#求子集)
-  - [去重](#去重)
+  - [数组去重](#数组去重)
 # 数学知识
 ## 试除法判定质数
 ```cpp
@@ -187,7 +187,7 @@ void allPossibleSubset(int arr[], int n){
 	}
 }
 ```
-## 去重
+## 数组去重
 ```cpp
 arr.erase(unique(arr.begin(), arr.end()), arr.end());
 /*
