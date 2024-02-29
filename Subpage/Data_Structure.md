@@ -258,12 +258,12 @@ using namespace __gnu_pbds;
 using namespace std;
 int main() {
     ios::sync_with_stdio(false);cin.tie(nullptr);cout.tie(nullptr);
-    int n; cin >> n; //scanf("%d", &n);
+    int n; cin >> n; 
     gp_hash_table<int, bool> corder;
     for (int i = 0; i < n; ++i) {
-        int now; cin >> now; //scanf("%d", &now);
+        int now; cin >> now;
         if (!corder[now]) {
-            cout << now << ' '; //printf("%d ", now);
+            cout << now << ' ';
             corder[now] = true;
         }
     }
