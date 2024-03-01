@@ -44,7 +44,7 @@ dfs 最重要的是搜索顺序。用什么顺序遍历所有方案。
 ![请添加图片描述](https://img-blog.csdnimg.cn/08575e6944244c3cbceaf740885f7034.png)
 
 **C++代码**：
-
+```cpp
     #include <iostream>
     using namespace std;
 
@@ -78,7 +78,7 @@ dfs 最重要的是搜索顺序。用什么顺序遍历所有方案。
         
         return 0;
     }
-
+```
 
 #### 例题2 AcWing 843. n-皇后问题
 
@@ -128,7 +128,7 @@ dfs 最重要的是搜索顺序。用什么顺序遍历所有方案。
 直到`r == n`，说明前`n`行都已经搜索完成，则输出棋盘上每一个位置的值。
 
 **C++代码**：
-
+```cpp
     #include <iostream>
 
     using namespace std;
@@ -172,7 +172,7 @@ dfs 最重要的是搜索顺序。用什么顺序遍历所有方案。
 
         return 0;
     }
-
+```
 
 **解题思路二**：
 
@@ -180,7 +180,7 @@ dfs 最重要的是搜索顺序。用什么顺序遍历所有方案。
 时间复杂度：O(2n2)，每个位置都有两种情况，总共有n2个位置
 
 **C++代码**：
-
+```cpp
     #include <iostream>
 
     using namespace std;
@@ -226,3 +226,4 @@ dfs 最重要的是搜索顺序。用什么顺序遍历所有方案。
 
         return 0;
     }
+```
