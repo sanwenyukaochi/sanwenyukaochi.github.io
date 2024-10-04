@@ -22,10 +22,10 @@ repository               : "sanwenyukaochi/sanwenyukaochi.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "WeChat.jpg"
   name             : "Song Yifan"
   pronouns         : # example: "she/her"  
-  bio              : "Short biography for the left-hand sidebar"
+  bio              : "Empty [I haven't decided what to fill in yet]"
   location         : "Hangzhou, Zhejiang"
   employer         : "Zhejiang University of Technology Zhijiang College"
   uri              : # URL
@@ -301,7 +301,7 @@ plugins:
   - jekyll-feed
   - jekyll-gist
   - jekyll-paginate
-  # - jekyll-sitemap
+  - jekyll-sitemap
   - jemoji
 
 # Mimic GitHub Pages with --safe
@@ -309,7 +309,7 @@ whitelist:
   - jekyll-feed
   - jekyll-gist
   - jekyll-paginate
-  # - jekyll-sitemap
+  - jekyll-sitemap
   - jemoji
 
 
