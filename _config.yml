@@ -7,8 +7,8 @@
 # server process.
 
 # Basic Site Settings
-locale                   : "en-US"
-# locale                   : "zh-CN"
+# locale                   : "en-US"
+locale                   : "zh-CN"
 title                    : "Song Yifan / Home"
 title_separator          : "-"
 name                     : &name "Song Yifan"
